@@ -57,7 +57,7 @@ public class Logowanie implements ILogowanie{
                         System.out.println("Wybierz ID rekordu: ");
                         scan.nextLine();
                         String id = scan.nextLine();
-                        testowa.edytujRekord(id);   // ZMIENIONE
+                        testowa.edytujRekord(id);   // ZMIENIONE EDYCJA
                         System.out.println("\nKliknij enter zeby przejsc do menu");
                         testowa.zapiszBaze();
                         scan.nextLine();
