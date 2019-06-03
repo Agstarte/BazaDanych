@@ -1,0 +1,9 @@
+Klient;A112;Janek;Kowalski;cos@gmail.com;500504054;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;kom;opis
+Nieruchomosc;B122;Janina;Kowalska;kowal@gmail.com;589378267;lesna;44-399;23;2;20-10-2000;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;1;1;1;opisikotakio;komentarztk
+Klient;A212;Jan;Kowalski;cos@gmail.com;500504054;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;kom;opis
+Nieruchomosc;B222;Janina;Kowalska;kowal@gmail.com;589378267;lesna;44-399;23;2;20-10-2000;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;opisikotakio;komentarztk
+Klient;A312;Jan;Kowalski;cos@gmail.com;500504054;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;kom;opis
+Nieruchomosc;B322;Janina;Kowalska;kowal@gmail.com;589378267;lesna;44-399;23;2;20-10-2000;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;opisikotakio;komentarztk
+Klient;A412;Jan;Kowalski;cos@gmail.com;500504054;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;kom;opis
+Nieruchomosc;B422;Karolina;Kowalska;kowal@gmail.com;589378267;lesna;44-399;23;2;20-10-2000;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;7;3;2;2;1;1;opisikotakio;komentarztk
+Klient;K44;Nowy;Klient;ex@example.com;123456789;1234;122;10;taka;inne;dom;1/1;3;2;100;1;1;1;0;0;0;0;1;opis1;kom2
