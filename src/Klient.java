@@ -192,12 +192,6 @@ public class Klient extends Rekord {
             }
         }
     }
-    @Override
-    public void wyczysc()
-    {
-        osoba.setKontakt("","","","");
-
-    }
 
     @Override
     public void zapisz()

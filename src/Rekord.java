@@ -22,11 +22,8 @@ public abstract class Rekord {
     private String komentarz;
 
 
-    protected void pokazSzczegoly() {
-    }
-
+    protected abstract void pokazSzczegoly();
     protected abstract void edytuj ();
-    protected abstract void wyczysc ();
     protected abstract void zapisz ();
     Rekord(String ID, String cena, String czynsz, String powCalkowita, String dzielnica, String osiedle, String typ, String pietroNaIle,
            String iloscPokoi, String iloscLazienek, String wysokoscCzynszu, String balkon, String ogrod, String miejscaParkingoweNaziemne,

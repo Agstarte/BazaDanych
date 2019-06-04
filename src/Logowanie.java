@@ -33,14 +33,16 @@ public class Logowanie implements ILogowanie{
             System.out.println("nie masz uprawnien do korzystania z programu");
         }
         else{
-            IObslugaBazyAdmin testowa = new ObslugaBazy();
+            ObslugaBazy testowa = new ObslugaBazy();
+            IObslugaBazyAdmin testowa1 = testowa;
+            IObslugaBazy testowa2 = testowa;
             int wybor;
-            SystemDopasowywania dopas = new SystemDopasowywania();
+            ISystemDopasowywania dopas = new SystemDopasowywania();
             Scanner scan = new Scanner(System.in);
             do {
                 System.out.println("Co chcesz zrobic?\n 0.Wyjscie\n 1.Przegladaj klientow\n 2.Przegladaj nieruchomosci\n 3.Edytuj rekord (po indeksie)" +
                         "\n 4.Dodaj rekord\n 5.Usun rekord(po ID)\n 6.Znajdz klientow ktorzy moga byc chetni na kupienie danej nieruchomosci\n" +
-                        " 7.Znajdz nieruchomosci spelniajace wymagania klientow \n 8. Pokaz szczegoly (po ID)\n 9. Wyczysc rekord (po ID)");
+                        " 7.Znajdz nieruchomosci spelniajace wymagania klientow \n 8. Pokaz szczegoly (po ID)");
                 wybor = scan.nextInt();
                 switch(wybor){
                     case 1:
@@ -123,14 +125,6 @@ public class Logowanie implements ILogowanie{
                         scan.nextLine();
                         String x = scan.nextLine();
                         testowa.pokazRekord(x);
-                        System.out.println("\nKliknij enter zeby przejsc do menu");
-                        scan.nextLine();
-                        break;
-                    case 9:
-                        System.out.println("Podaj ID rekordu, ktory chcesz wyczyscic");
-                        scan.nextLine();
-                        String iD = scan.nextLine();
-                        testowa.wyczyscRekord(testowa.getBaza().get(testowa.wyszukajRekord(iD)));
                         System.out.println("\nKliknij enter zeby przejsc do menu");
                         scan.nextLine();
                         break;

@@ -233,17 +233,6 @@ public class Nieruchomosc extends Rekord{
     }
 
 
-    @Override
-    public void wyczysc()
-    {
-        wlasciciel.setKontakt("","","","");
-        adres.setKodPocztowy("");
-        adres.setNrDomu("");
-        adres.setNrMieszkania("");
-        adres.setUlica("");
-        setDataDodania("");
-
-    }
 
     @Override
     public void zapisz()

@@ -168,31 +168,7 @@ public class ObslugaBazy implements IObslugaBazyAdmin, IObslugaBazy{
         baza.get(wyszukajRekord(ID)).pokazSzczegoly();
     }
 
-    public void wyczyscRekord (Rekord rekord)
-    {
-        rekord.setID("0");
-        rekord.setKomentarz2("");
-        rekord.setOpis("");
-        rekord.setRynekWtorny("");
-        rekord.setOsiedleStrzezone("");
-        rekord.setOsiedle("");
-        rekord.setWinda("");
-        rekord.setPiwnica("");
-        rekord.setMiejscaParkingowePodziemne("");
-        rekord.setMiejscaParkingoweNaziemne("");
-        rekord.setOgrod("");
-        rekord.setBalkon("");
-        rekord.setWysokoscCzynszu("");
-        rekord.setIloscLazienek("");
-        rekord.setIloscPokoi("");
-        rekord.setPietroNaIle("");
-        rekord.setTyp("");
-        rekord.setDzielnica("");
-        rekord.setPowCalkowita("");
-        rekord.setCzynsz("");
-        rekord.setCena("");
-        rekord.wyczysc();
-    }
+
 
     public void przegladajKlientow()
     {
