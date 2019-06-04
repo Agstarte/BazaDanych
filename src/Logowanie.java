@@ -50,17 +50,25 @@ public class Logowanie implements ILogowanie{
         if (admin == 0) {
             System.out.println("nie masz uprawnien do korzystania z programu");
         } else {
+            if(admin==1)
+                System.out.println("Zalogowales sie jako admin");
+            else
+                System.out.println("Zalogowales sie jako uzytkownik");
+
             ObslugaBazy testowa = new ObslugaBazy();
             IObslugaBazyAdmin testowa1 = testowa;
             IObslugaBazy testowa2 = testowa;
-            String wybor;
             ISystemDopasowywania dopas = new SystemDopasowywania();
+
+            String wybor;
             Scanner scan = new Scanner(System.in);
+
             do {
                 System.out.println("Co chcesz zrobic?\n 0.Wyjscie\n 1.Przegladaj klientow\n 2.Przegladaj nieruchomosci \n " +
                         "3.Znajdz klientow ktorzy moga byc chetni na kupienie danej nieruchomosci\n" +
-                        " 4.Znajdz nieruchomosci spelniajace wymagania klientow \n 5.Pokaz szczegoly (po ID) \n 6.Edytuj rekord (po ID)" +
-                        "\n 7.Dodaj rekord \n 8.Usun rekord(po ID)");
+                        " 4.Znajdz nieruchomosci spelniajace wymagania klientow \n 5.Pokaz szczegoly (po ID)");
+                if(admin == 1)
+                    System.out.println(" 6.Edytuj rekord (po ID)" +"\n 7.Dodaj rekord \n 8.Usun rekord(po ID)");
 
 
                 wybor = scan.nextLine();
@@ -102,36 +110,43 @@ public class Logowanie implements ILogowanie{
                         enterek();
                         break;
                     case "6":
-                        System.out.println("Wybierz ID rekordu: ");
-                        scan.nextLine();
-                        String id = scan.nextLine();
-                        testowa.edytujRekord(id);
-                        System.out.println("\nKliknij enter zeby przejsc do menu");
-                        testowa.zapiszBaze();
-                        enterek();
-                        break;
+                        if(admin == 1) {
+                            System.out.println("Wybierz ID rekordu: ");
+                            scan.nextLine();
+                            String id = scan.nextLine();
+                            testowa.edytujRekord(id);
+                            System.out.println("\nKliknij enter zeby przejsc do menu");
+                            testowa.zapiszBaze();
+                            enterek();
+                            break;
+                        }
                     case "7":
-                        testowa.dodajRekord();
-                        testowa.zapiszBaze();
-                        System.out.println("\nKliknij enter zeby przejsc do menu");
-                        testowa.zapiszBaze();
-                        enterek();
-                        break;
+                        if(admin == 1) {
+                            testowa.dodajRekord();
+                            testowa.zapiszBaze();
+                            System.out.println("\nKliknij enter zeby przejsc do menu");
+                            testowa.zapiszBaze();
+                            enterek();
+                            break;
+                        }
                     case "8":
-                        System.out.println("Podaj ID rekordu do usuniecia");
-                        scan.nextLine();
-                        String szukane = scan.nextLine();
-                        testowa.usunRekord(szukane);
-                        testowa.zapiszBaze();
-                        System.out.println("\nKliknij enter zeby przejsc do menu");
-                        enterek();
-                        break;
-                    case "0":
-                        break;
+                        if(admin ==1) {
+                            System.out.println("Podaj ID rekordu do usuniecia");
+                            scan.nextLine();
+                            String szukane = scan.nextLine();
+                            testowa.usunRekord(szukane);
+                            testowa.zapiszBaze();
+                            System.out.println("\nKliknij enter zeby przejsc do menu");
+                            enterek();
+                            break;
+                        }
+
                     default:
                         System.out.println("Niepoprawny wybor");
                         System.out.println("\nKliknij enter zeby przejsc do menu");
                         enterek();
+                        break;
+                    case "0":
                         break;
                 }
             } while (!wybor.equals("0"));
