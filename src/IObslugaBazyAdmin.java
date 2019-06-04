@@ -1,6 +1,5 @@
 public interface IObslugaBazyAdmin extends IObslugaBazy{
     void dodajRekord();
-    void usunRekord(Rekord wywal);
-    void zapiszBaze();
+    void usunRekord(String ID);
     void edytujRekord(String ID);
 }

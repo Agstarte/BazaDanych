@@ -47,7 +47,7 @@ public class Nieruchomosc extends Rekord{
                 + "\nDzielnica: " + getDzielnica() + "\nOsiedle: " + getOsiedle() + "\nTyp: " + getTyp() + "\nPietro/na ile pieter: " + getPietroNaIle()
                 + "\nIlosc pokoi: " + getIloscPokoi()+ "\nIlosc lazienek: " + getIloscLazienek() + "\nWysokosc czynszu: " + getWysokoscCzynszu() +
                 "\nCzy balkon?: " + getBalkon() + "\nCzy ogrod?: " + getOgrod() + "\nMiejsca parkingowe naziemne: " + getMiejscaParkingoweNaziemne() +
-                "\nMiejsca parkingowe podziemne: " + getMiejscaParkingowePodziemne() + "Czy piwnica?: " + getPiwnica() + "\nCzy winda?: " + getWinda() +
+                "\nMiejsca parkingowe podziemne: " + getMiejscaParkingowePodziemne() + "\nCzy piwnica?: " + getPiwnica() + "\nCzy winda?: " + getWinda() +
                 "\nCzy osiedle strzezone?: " + getOsiedleStrzezone() + "\nCzy rynek wtďż˝rny?: " + getRynekWtorny()
                 + "\nOpis: " + getOpis() + "\nKomentarze: " + getKomentarz() );
     }

@@ -1,4 +1,4 @@
 public interface ISystemDopasowywania {
-    void dopasujKlienta (Rekord nieruchomosc, int dokladnosc);
-    void dopasujNieruchomosc (Rekord klient, int dokladnosc);
+    void dopasujKlientow (String ID, int dokladnosc);
+    void dopasujNieruchomosci (String ID, int dokladnosc);
 }

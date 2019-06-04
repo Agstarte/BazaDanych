@@ -165,7 +165,9 @@ public class ObslugaBazy implements IObslugaBazyAdmin, IObslugaBazy{
 
     public void pokazRekord(String ID)
     {
-        baza.get(wyszukajRekord(ID)).pokazSzczegoly();
+        if (wyszukajRekord(ID) != -1) {
+            baza.get(wyszukajRekord(ID)).pokazSzczegoly();
+        } else System.out.println("Nie ma Rekordu o takim ID");
     }
 
 
@@ -192,25 +194,31 @@ public class ObslugaBazy implements IObslugaBazyAdmin, IObslugaBazy{
         return -1;
     }
 
-    public void usunRekord(Rekord wywal) //usuwa rekord z tablicy
+    public void usunRekord(String ID) //usuwa rekord z tablicy
     {
-        if(wywal instanceof Klient)
-        {
 
-            //wywal.osoba = null; chyba powiniem usunac ale nie da sie bo nie jest w Rekord
-            if(baza.remove(wywal))
-                System.out.println("Klient usuniety");
-            else
-                System.out.println("Nie udalo sie usunac Klienta");
+        int znalezione = wyszukajRekord(ID);
+        if(znalezione == -1)
+        {
+            System.out.println("Nie ma rekordku o takim ID");
         }
         else
         {
-            //wywal.ekspozycja = null; chyba powinno byc usuniete ale skoro wyzej tego nie robie no to trudno
-            if(baza.remove(wywal))
-                System.out.println("Nieruchomosc usunieta");
-            else
-                System.out.println("Nie udalo sie usunac nieruchomosci");
-        }
+            Rekord wywal = getBaza().get(znalezione);
+            if(wywal instanceof Klient)
+          {
+                if(baza.remove(wywal))
+                System.out.println("Klient usuniety");
+                else
+                System.out.println("Nie udalo sie usunac Klienta");
+          }
+          else
+           {
+                if(baza.remove(wywal))
+                    System.out.println("Nieruchomosc usunieta");
+                else
+                    System.out.println("Nie udalo sie usunac nieruchomosci");
+           }}
     }
 
     public void edytujRekord(String ID)

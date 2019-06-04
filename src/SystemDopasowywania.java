@@ -12,14 +12,14 @@ public class SystemDopasowywania implements ISystemDopasowywania{
     public static int sprawdzDopasowanie (Rekord klient, Rekord nier)
     {
 
-
         int pasujace=0;
         if(nier instanceof Nieruchomosc)
         {
             String holder[];
 
             holder = klient.getCena().split("-");
-            if(holder[1]==null) {
+
+            if(holder.length == 1) {
                 if (klient.getCena().equals(nier.getCena()))
                     pasujace++;
             } else {
@@ -27,7 +27,7 @@ public class SystemDopasowywania implements ISystemDopasowywania{
                     pasujace++;
             }
             holder = klient.getCzynsz().split("-");
-            if(holder[1]==null) {
+            if(holder.length == 1) {
                 if(klient.getCzynsz().equals(nier.getCzynsz()))
                     pasujace++;
             } else {
@@ -35,7 +35,7 @@ public class SystemDopasowywania implements ISystemDopasowywania{
                     pasujace++;
             }
             holder = klient.getPowCalkowita().split("-");
-            if(holder[1]==null) {
+            if(holder.length == 1) {
                 if(klient.getPowCalkowita().equals(nier.getPowCalkowita()))
                     pasujace++;
             } else {
@@ -51,7 +51,7 @@ public class SystemDopasowywania implements ISystemDopasowywania{
             if(klient.getPietroNaIle().equals(nier.getPietroNaIle()))
                 pasujace++;
             holder = klient.getIloscPokoi().split("-");
-            if(holder[1]==null) {
+            if(holder.length == 1) {
                 if(klient.getIloscPokoi().equals(nier.getIloscPokoi()))
                     pasujace++;
             } else {
@@ -59,7 +59,7 @@ public class SystemDopasowywania implements ISystemDopasowywania{
                     pasujace++;
             }
             holder = klient.getIloscLazienek().split("-");
-            if(holder[1]==null) {
+            if(holder.length == 1) {
                 if(klient.getIloscLazienek().equals(nier.getIloscLazienek()))
                     pasujace++;
             } else {
@@ -67,7 +67,7 @@ public class SystemDopasowywania implements ISystemDopasowywania{
                     pasujace++;
             }
             holder = klient.getWysokoscCzynszu().split("-");
-            if(holder[1]==null) {
+            if(holder.length == 1) {
                 if(klient.getWysokoscCzynszu().equals(nier.getWysokoscCzynszu()))
                     pasujace++;
             } else {
@@ -96,35 +96,43 @@ public class SystemDopasowywania implements ISystemDopasowywania{
 
     /*wypisuje na ekran ID kazdego klienta, ktorego wymagania z podana
     dokladnoscia zgadzaja sie z opisem nieruchomosci*/
-    public  void dopasujKlienta (Rekord nieruchomosc, int dokladnosc)
+
+
+    public  void dopasujKlientow (String ID, int dokladnosc)
     {
 
-        for(int i=0; i<b.getBaza().size(); ++i)
-        {
-            Rekord klient = b.getBaza().get(i);
-            if(klient instanceof Klient)
-            {
-                int pasujace= SystemDopasowywania.sprawdzDopasowanie(klient, nieruchomosc);
+        int znaleziona = b.wyszukajRekord(ID);
+        if (znaleziona == -1 || b.getBaza().get(znaleziona) instanceof Klient) {
+            System.out.println("Nie ma nieruchomosci o takim ID");
+        } else {
 
-                if(pasujace>=dokladnosc) //jesli elemntow spelniajacych wymagania jest dosc to wypisze na ekran
-                    System.out.println(klient.ID + " pasujacych pol:" + pasujace);
+            for (int i = 0; i < b.getBaza().size(); ++i) {
+                Rekord klient = b.getBaza().get(i);
+                if (klient instanceof Klient) {
+                    int pasujace = SystemDopasowywania.sprawdzDopasowanie(klient, b.getBaza().get(znaleziona));
+
+                    if (pasujace >= dokladnosc) //jesli elemntow spelniajacych wymagania jest dosc to wypisze na ekran
+                        System.out.println(klient.ID + " pasujacych pol:" + pasujace);
+                }
             }
         }
     }
 
     //analogicznie do dopasujKlienta
-    public  void dopasujNieruchomosc (Rekord klient, int dokladnosc)
+    public  void dopasujNieruchomosci (String ID, int dokladnosc)
     {
+        int znaleziony = b.wyszukajRekord(ID);
+        if (znaleziony == -1 || b.getBaza().get(znaleziony) instanceof Nieruchomosc) {
+            System.out.println("Nie ma klienta o takim ID");
+        } else {
+            for (int i = 0; i < b.getBaza().size(); ++i) {
+                Rekord nieruchomosc = b.getBaza().get(i);
+                if (nieruchomosc instanceof Nieruchomosc) {
+                    int pasujace = SystemDopasowywania.sprawdzDopasowanie(b.getBaza().get(znaleziony), nieruchomosc);
 
-        for(int i=0; i<b.getBaza().size(); ++i)
-        {
-            Rekord nieruchomosc = b.getBaza().get(i);
-            if(nieruchomosc instanceof Nieruchomosc)
-            {
-                int pasujace= SystemDopasowywania.sprawdzDopasowanie(klient, nieruchomosc);
-
-                if(pasujace>=dokladnosc) //jesli elemntow spelniajacych wymagania jest dosc to wypisze na ekran
-                    System.out.println(nieruchomosc.ID + " pasujacych pol:" + pasujace);
+                    if (pasujace >= dokladnosc) //jesli elemntow spelniajacych wymagania jest dosc to wypisze na ekran
+                        System.out.println(nieruchomosc.ID + " pasujacych pol:" + pasujace);
+                }
             }
         }
     }

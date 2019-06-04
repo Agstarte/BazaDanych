@@ -4,6 +4,4 @@ public interface IObslugaBazy {
     void pokazRekord(String ID);
     void przegladajKlientow ();
     void przegladajNieruchomosci ();
-    ArrayList<Rekord> getBaza();  // ZMIENIONE
-    int wyszukajRekord(String ID);
 }

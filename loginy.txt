@@ -1,2 +1,3 @@
-admin
-admin
+A.admin.admin
+U.u1.haslo
+U.u2.haslo
