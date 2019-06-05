@@ -41,8 +41,8 @@ public class Nieruchomosc extends Rekord{
     public  void pokazSzczegoly ()
     {
         System.out.println("\nNieruchomosc: " + this.ID);
-        wlasciciel.getKontakt();
-        adres.getAdres();
+        wlasciciel.wyswietlKontakt();
+        adres.wyswietlAdres();
         System.out.println("Data dodania: " + this.dataDodania + "\nCena za m2: " + this.cenaZaMetr2  +"\nCena: " + getCena() + "\nCzynsz: " + getCzynsz()+ "\nPow. calkowita: " + getPowCalkowita()
                 + "\nDzielnica: " + getDzielnica() + "\nOsiedle: " + getOsiedle() + "\nTyp: " + getTyp() + "\nPietro/na ile pieter: " + getPietroNaIle()
                 + "\nIlosc pokoi: " + getIloscPokoi()+ "\nIlosc lazienek: " + getIloscLazienek() + "\nWysokosc czynszu: " + getWysokoscCzynszu() +

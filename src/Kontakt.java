@@ -12,7 +12,7 @@ public class Kontakt {
         this.mail=mail;
         this.nrKontaktowy=nrKontaktowy;
     }
-    public void getKontakt ()
+    public void wyswietlKontakt()
     {
         System.out.println(imie + " " + nazwisko + "\n" + mail + "\n" + nrKontaktowy);
     }

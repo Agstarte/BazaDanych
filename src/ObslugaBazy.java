@@ -170,8 +170,6 @@ public class ObslugaBazy implements IObslugaBazyAdmin, IObslugaBazy{
         } else System.out.println("Nie ma Rekordu o takim ID");
     }
 
-
-
     public void przegladajKlientow()
     {
         for(int i=0; i<baza.size(); ++i)

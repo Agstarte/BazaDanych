@@ -1,11 +1,11 @@
 public class SystemDopasowywania implements ISystemDopasowywania{
 
-    ObslugaBazy b = new ObslugaBazy();  // ZMIENIONE
+    ObslugaBazy obslugaBazy = new ObslugaBazy();  // ZMIENIONE
 
 
     public SystemDopasowywania()
     {
-        this.b=b;
+        this.obslugaBazy = obslugaBazy;
     }  // ZMIENIONE
 
     //porownuje nieruchomosc i wymagania klienta, sprawdza ile pol sie zgadza
@@ -101,15 +101,15 @@ public class SystemDopasowywania implements ISystemDopasowywania{
     public  void dopasujKlientow (String ID, int dokladnosc)
     {
 
-        int znaleziona = b.wyszukajRekord(ID);
-        if (znaleziona == -1 || b.getBaza().get(znaleziona) instanceof Klient) {
+        int znaleziona = obslugaBazy.wyszukajRekord(ID);
+        if (znaleziona == -1 || obslugaBazy.getBaza().get(znaleziona) instanceof Klient) {
             System.out.println("Nie ma nieruchomosci o takim ID");
         } else {
 
-            for (int i = 0; i < b.getBaza().size(); ++i) {
-                Rekord klient = b.getBaza().get(i);
+            for (int i = 0; i < obslugaBazy.getBaza().size(); ++i) {
+                Rekord klient = obslugaBazy.getBaza().get(i);
                 if (klient instanceof Klient) {
-                    int pasujace = SystemDopasowywania.sprawdzDopasowanie(klient, b.getBaza().get(znaleziona));
+                    int pasujace = SystemDopasowywania.sprawdzDopasowanie(klient, obslugaBazy.getBaza().get(znaleziona));
 
                     if (pasujace >= dokladnosc) //jesli elemntow spelniajacych wymagania jest dosc to wypisze na ekran
                         System.out.println(klient.ID + " pasujacych pol:" + pasujace);
@@ -121,14 +121,14 @@ public class SystemDopasowywania implements ISystemDopasowywania{
     //analogicznie do dopasujKlienta
     public  void dopasujNieruchomosci (String ID, int dokladnosc)
     {
-        int znaleziony = b.wyszukajRekord(ID);
-        if (znaleziony == -1 || b.getBaza().get(znaleziony) instanceof Nieruchomosc) {
+        int znaleziony = obslugaBazy.wyszukajRekord(ID);
+        if (znaleziony == -1 || obslugaBazy.getBaza().get(znaleziony) instanceof Nieruchomosc) {
             System.out.println("Nie ma klienta o takim ID");
         } else {
-            for (int i = 0; i < b.getBaza().size(); ++i) {
-                Rekord nieruchomosc = b.getBaza().get(i);
+            for (int i = 0; i < obslugaBazy.getBaza().size(); ++i) {
+                Rekord nieruchomosc = obslugaBazy.getBaza().get(i);
                 if (nieruchomosc instanceof Nieruchomosc) {
-                    int pasujace = SystemDopasowywania.sprawdzDopasowanie(b.getBaza().get(znaleziony), nieruchomosc);
+                    int pasujace = SystemDopasowywania.sprawdzDopasowanie(obslugaBazy.getBaza().get(znaleziony), nieruchomosc);
 
                     if (pasujace >= dokladnosc) //jesli elemntow spelniajacych wymagania jest dosc to wypisze na ekran
                         System.out.println(nieruchomosc.ID + " pasujacych pol:" + pasujace);

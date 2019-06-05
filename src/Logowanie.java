@@ -55,9 +55,9 @@ public class Logowanie implements ILogowanie{
             else
                 System.out.println("Zalogowales sie jako uzytkownik");
 
-            ObslugaBazy testowa = new ObslugaBazy();
-            IObslugaBazyAdmin testowa1 = testowa;
-            IObslugaBazy testowa2 = testowa;
+            ObslugaBazy obsluga = new ObslugaBazy();
+            IObslugaBazyAdmin obsluga1 = obsluga;
+            IObslugaBazy obsluga2 = obsluga;
             ISystemDopasowywania dopas = new SystemDopasowywania();
 
             String wybor;
@@ -75,12 +75,12 @@ public class Logowanie implements ILogowanie{
 
                 switch (wybor) {
                     case "1":
-                        testowa2.przegladajKlientow();
+                        obsluga2.przegladajKlientow();
                         System.out.println("\nKliknij enter zeby przejsc do menu");
                         enterek();
                         break;
                     case "2":
-                        testowa2.przegladajNieruchomosci();
+                        obsluga2.przegladajNieruchomosci();
                         System.out.println("\nKliknij enter zeby przejsc do menu");
                         enterek();
                         break;
@@ -105,7 +105,7 @@ public class Logowanie implements ILogowanie{
                         System.out.println("Podaj ID rekordu, ktorego szczegoly chcesz zobaczyc");
                         scan.nextLine();
                         String x = scan.nextLine();
-                        testowa.pokazRekord(x);
+                        obsluga.pokazRekord(x);
                         System.out.println("\nKliknij enter zeby przejsc do menu");
                         enterek();
                         break;
@@ -114,18 +114,18 @@ public class Logowanie implements ILogowanie{
                             System.out.println("Wybierz ID rekordu: ");
                             scan.nextLine();
                             String id = scan.nextLine();
-                            testowa.edytujRekord(id);
+                            obsluga1.edytujRekord(id);
                             System.out.println("\nKliknij enter zeby przejsc do menu");
-                            testowa.zapiszBaze();
+                            obsluga.zapiszBaze();
                             enterek();
                             break;
                         }
                     case "7":
                         if(admin == 1) {
-                            testowa.dodajRekord();
-                            testowa.zapiszBaze();
+                            obsluga1.dodajRekord();
+                            obsluga.zapiszBaze();
                             System.out.println("\nKliknij enter zeby przejsc do menu");
-                            testowa.zapiszBaze();
+                            obsluga.zapiszBaze();
                             enterek();
                             break;
                         }
@@ -134,8 +134,8 @@ public class Logowanie implements ILogowanie{
                             System.out.println("Podaj ID rekordu do usuniecia");
                             scan.nextLine();
                             String szukane = scan.nextLine();
-                            testowa.usunRekord(szukane);
-                            testowa.zapiszBaze();
+                            obsluga1.usunRekord(szukane);
+                            obsluga.zapiszBaze();
                             System.out.println("\nKliknij enter zeby przejsc do menu");
                             enterek();
                             break;
@@ -150,7 +150,7 @@ public class Logowanie implements ILogowanie{
                         break;
                 }
             } while (!wybor.equals("0"));
-            testowa.zapiszBaze();
+            obsluga.zapiszBaze();
         }
     }
         private void enterek()
