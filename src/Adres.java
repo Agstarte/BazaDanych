@@ -13,7 +13,7 @@ public class Adres {
         nrMieszkania=nrM;
     }
 
-    public void getAdres ()
+    public void wyswietlAdres()
     {
         System.out.print(ulica + " ");
         if(nrMieszkania==null)

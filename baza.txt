@@ -6,3 +6,4 @@ Klient;A312;Jan;Kowalski;cos@gmail.com;500504054;2000;233;230;doie;osso;mieszkan
 Nieruchomosc;B322;Janina;Kowalska;kowal@gmail.com;589378267;lesna;44-399;23;2;20-10-2000;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;opisikotakio;komentarztk
 Klient;A412;Jan;Kowalski;cos@gmail.com;500504054;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;3;0;1;2;1;1;kom;opis
 Nieruchomosc;B422;Karolina;Kowalska;kowal@gmail.com;589378267;lesna;44-399;23;2;20-10-2000;2000;233;230;doie;osso;mieszkanie;1/3;5;2;30;1;2;7;3;2;2;1;1;opisikotakio;komentarztk
+Klient;A512;Stefan;Stefanski;stef@aaa.pl;512345666;1234-1235;11;1123-4556;nadodrze;nadodrze;mieszkania;2/3;2-3;1-1;1000-2000;1;0;1;0;0;0;0;0;fajnyOpis;moj komentarz

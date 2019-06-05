@@ -31,7 +31,7 @@ public class Klient extends Rekord {
     public void pokazSzczegoly ()
     {
         System.out.println("Klient: " + this.ID);
-        osoba.getKontakt();
+        osoba.wyswietlKontakt();
         System.out.println("Wymagana cena: " + getCena() + "\nWymagany czynsz: " + getCzynsz()+ "\nWymagana pow. calkowita: " + getPowCalkowita()
                 + "\nDzielnica: " + getDzielnica() + "\nOsiedle: " + getOsiedle() + "\nTyp: " + getTyp() + "\nPietro/na ile pieter: " + getPietroNaIle()
                 + "\nIlosc pokoi: " + getIloscPokoi()+ "\nIlosc lazienek: " + getIloscLazienek() + "\nWysokosc czynszu: " + getWysokoscCzynszu() +
