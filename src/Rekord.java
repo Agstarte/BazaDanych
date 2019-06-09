@@ -1,25 +1,25 @@
 public abstract class Rekord {
-    String ID;
-    private String cena;
-    private String czynsz;
-    private String powCalkowita;
-    private String dzielnica;
-    private String osiedle;
-    private String typ;
-    private String pietroNaIle;
-    private String iloscPokoi;
-    private String iloscLazienek;
-    private String wysokoscCzynszu;
-    private String balkon;
-    private String ogrod;
-    private String miejscaParkingoweNaziemne;
-    private String miejscaParkingowePodziemne;
-    private String piwnica;
-    private String winda;
-    private String osiedleStrzezone;
-    private String rynekWtorny;
-    private String opis;
-    private String komentarz;
+    protected String ID;
+    protected String cena;
+    protected String czynsz;
+    protected String powCalkowita;
+    protected String dzielnica;
+    protected String osiedle;
+    protected String typ;
+    protected String pietroNaIle;
+    protected String iloscPokoi;
+    protected String iloscLazienek;
+    protected String wysokoscCzynszu;
+    protected String balkon;
+    protected String ogrod;
+    protected String miejscaParkingoweNaziemne;
+    protected String miejscaParkingowePodziemne;
+    protected String piwnica;
+    protected String winda;
+    protected String osiedleStrzezone;
+    protected String rynekWtorny;
+    protected String opis;
+    protected String komentarz;
 
 
     protected abstract void pokazSzczegoly();
@@ -52,6 +52,7 @@ public abstract class Rekord {
         this.komentarz = komentarz;
     }
 
+    /*
 
     public String getID() {
         return ID;
@@ -222,4 +223,5 @@ public abstract class Rekord {
     }
 
     public void setKomentarz2 (String komentarz) {this.komentarz = komentarz;}
+    */
 }

@@ -30,8 +30,8 @@ public class Nieruchomosc extends Rekord{
         this.wlasciciel = new Kontakt (imie, nazwisko, email, tel);
         this.adres = new Adres (ul,kod,nrD,nrM);
         this.dataDodania = dataDodania;
-        int intcena = Integer.parseInt(getCena());
-        int intpow = Integer.parseInt(getPowCalkowita());
+        int intcena = Integer.parseInt(this.cena);
+        int intpow = Integer.parseInt(this.powCalkowita);
         int cenametr = (intcena/intpow);
         this.cenaZaMetr2 = Integer.toString(cenametr);
     }
@@ -43,13 +43,13 @@ public class Nieruchomosc extends Rekord{
         System.out.println("\nNieruchomosc: " + this.ID);
         wlasciciel.wyswietlKontakt();
         adres.wyswietlAdres();
-        System.out.println("Data dodania: " + this.dataDodania + "\nCena za m2: " + this.cenaZaMetr2  +"\nCena: " + getCena() + "\nCzynsz: " + getCzynsz()+ "\nPow. calkowita: " + getPowCalkowita()
-                + "\nDzielnica: " + getDzielnica() + "\nOsiedle: " + getOsiedle() + "\nTyp: " + getTyp() + "\nPietro/na ile pieter: " + getPietroNaIle()
-                + "\nIlosc pokoi: " + getIloscPokoi()+ "\nIlosc lazienek: " + getIloscLazienek() + "\nWysokosc czynszu: " + getWysokoscCzynszu() +
-                "\nCzy balkon?: " + getBalkon() + "\nCzy ogrod?: " + getOgrod() + "\nMiejsca parkingowe naziemne: " + getMiejscaParkingoweNaziemne() +
-                "\nMiejsca parkingowe podziemne: " + getMiejscaParkingowePodziemne() + "\nCzy piwnica?: " + getPiwnica() + "\nCzy winda?: " + getWinda() +
-                "\nCzy osiedle strzezone?: " + getOsiedleStrzezone() + "\nCzy rynek wtďż˝rny?: " + getRynekWtorny()
-                + "\nOpis: " + getOpis() + "\nKomentarze: " + getKomentarz() );
+        System.out.println("Data dodania: " + this.dataDodania + "\nCena za m2: " + this.cenaZaMetr2  +"\nCena: " + this.cena + "\nCzynsz: " + this.czynsz+ "\nPow. calkowita: " + this.powCalkowita
+                + "\nDzielnica: " + this.dzielnica + "\nOsiedle: " + this.osiedle + "\nTyp: " + this.typ + "\nPietro/na ile pieter: " + this.pietroNaIle
+                + "\nIlosc pokoi: " + this.iloscPokoi+ "\nIlosc lazienek: " + this.iloscLazienek + "\nWysokosc czynszu: " + this.wysokoscCzynszu +
+                "\nCzy balkon?: " + this.balkon + "\nCzy ogrod?: " + this.ogrod + "\nMiejsca parkingowe naziemne: " + this.miejscaParkingoweNaziemne +
+                "\nMiejsca parkingowe podziemne: " + this.miejscaParkingowePodziemne + "\nCzy piwnica?: " + this.piwnica + "\nCzy winda?: " + this.winda +
+                "\nCzy osiedle strzezone?: " + this.osiedleStrzezone + "\nCzy rynek wtďż˝rny?: " + this.rynekWtorny
+                + "\nOpis: " + this.opis + "\nKomentarze: " + this.komentarz );
     }
 
 
@@ -127,102 +127,102 @@ public class Nieruchomosc extends Rekord{
             case 11:
                 System.out.println("Podaj nowa cene: ");
                 String cen = input.nextLine();
-                setCena(cen);
+                this.cena = cen;
                 break;
             case 12:
                 System.out.println("Podaj nowy czynsz: ");
                 String czyn = input.nextLine();
-                setCzynsz(czyn);
+                this.czynsz = czyn;
                 break;
             case 13:
                 System.out.println("Podaj nowa pow. calkowita: ");
                 String pow = input.nextLine();
-                setPowCalkowita(pow);
+                this.powCalkowita = pow;
                 break;
             case 14:
                 System.out.println("Podaj nowa dzielnice: ");
                 String dzielnia = input.nextLine();
-                setDzielnica(dzielnia);
+                this.dzielnica = dzielnia;
                 break;
             case 15:
                 System.out.println("Podaj nowe osiedle: ");
                 String osied = input.nextLine();
-                setOsiedle(osied);
+                this.osiedle = osied;
                 break;
             case 16:
                 System.out.println("Podaj nowy typ nieruchomosci: ");
                 String typek = input.nextLine();
-                setTyp(typek);
+                this.typ = typek;
                 break;
             case 17:
                 System.out.println("Podaj nowe pietro/na ile pieter: ");
                 String pietro = input.nextLine();
-                setPietroNaIle(pietro);
+                this.pietroNaIle = pietro;
                 break;
             case 18:
                 System.out.println("Podaj nowa ilosc pokoi: ");
                 String iloscp = input.nextLine();
-                setIloscPokoi(iloscp);
+                this.iloscPokoi = iloscp;
                 break;
             case 19:
                 System.out.println("Podaj nowa ilosc lazienek:");
                 String iloscl = input.nextLine();
-                setIloscLazienek(iloscl);
+                this.iloscLazienek = iloscl;
                 break;
             case 20:
                 System.out.println("Podaj nowa wysokosc czynszu: ");
                 String wysczynsz = input.nextLine();
-                setWysokoscCzynszu(wysczynsz);
+                this.wysokoscCzynszu = wysczynsz;
                 break;
             case 21:
                 System.out.println("Czy jest balkon? (1/0): ");
                 String balk = input.nextLine();
-                setBalkon(balk);
+                this.balkon = balk;
                 break;
             case 22:
                 System.out.println("Czy jest ogrod? (1/0): ");
                 String ogr = input.nextLine();
-                setOgrod(ogr);
+                this.ogrod = ogr;
                 break;
             case 23:
                 System.out.println("Czy sa miejsca parkingowe naziemne?(1/0): ");
                 String mpn = input.nextLine();
-                setMiejscaParkingoweNaziemne(mpn);
+                this.miejscaParkingoweNaziemne = mpn;
                 break;
             case 24:
                 System.out.println("Czy sa miejsca parkingowe podziemne?(1/0): ");
                 String mpp = input.nextLine();
-                setMiejscaParkingowePodziemne(mpp);
+                this.miejscaParkingoweNaziemne = mpp;
                 break;
             case 25:
                 System.out.println("Czy jest piwnica?(1/0): ");
                 String piwn = input.nextLine();
-                setPiwnica(piwn);
+                this.piwnica = piwn;
                 break;
             case 26:
                 System.out.println("Czy jest winda?(1/0): ");
                 String wind = input.nextLine();
-                setWinda(wind);
+                this.winda = wind;
                 break;
             case 27:
                 System.out.println("Czy jest to osiedle strzezone?(1/0): ");
                 String os = input.nextLine();
-                setOsiedleStrzezone(os);
+                this.osiedleStrzezone = os;
                 break;
             case 28:
                 System.out.println("Czy jest to rynek wtorny?(1/0): ");
                 String rw = input.nextLine();
-                setRynekWtorny(rw);
+                this.rynekWtorny = rw;
                 break;
             case 29:
                 System.out.println("Podaj nowy opis: ");
                 String op = input.nextLine();
-                setOpis(op);
+                this.opis = op;
                 break;
             case 30:
                 System.out.println("Dodaj komentarz: ");
                 String kom = input.nextLine();
-                setKomentarz(kom);
+                this.komentarz = kom;
                 break;
             case 0:
                 break;
@@ -243,10 +243,10 @@ public class Nieruchomosc extends Rekord{
             PrintWriter out = new PrintWriter(plik);
             out.println("Nieruchomosc;" + ID +";"+ wlasciciel.getImie() +";"+ wlasciciel.getNazwisko()
                     +";"+ wlasciciel.getMail() +";"+ wlasciciel.getNrKontaktowy() +";"+ adres.getUlica() +";"+ adres.getKodPocztowy()
-                    +";"+ adres.getNrDomu() +";"+ adres.getNrMieszkania() +";"+ dataDodania +";"+ getCena() +";"+ getCzynsz() +";"+
-                    getPowCalkowita() +";"+ getDzielnica() +";"+ getOsiedle() +";"+ getTyp() +";"+ getPietroNaIle() +";"+ getIloscPokoi() +";"+ getIloscLazienek()
-                    +";"+ getWysokoscCzynszu() +";"+ getBalkon() +";"+ getOgrod() +";"+ getMiejscaParkingoweNaziemne() +";"+ getMiejscaParkingowePodziemne()
-                    +";"+ getPiwnica() +";"+ getWinda() +";"+ getOsiedleStrzezone() +";" + getRynekWtorny() +";"+ getOpis() +";"+ getKomentarz() );
+                    +";"+ adres.getNrDomu() +";"+ adres.getNrMieszkania() +";"+ dataDodania +";"+ this.cena +";"+ this.czynsz +";"+
+                    this.powCalkowita +";"+ this.dzielnica +";"+ this.osiedle +";"+ this.typ +";"+ this.pietroNaIle +";"+ this.iloscPokoi +";"+ this.iloscLazienek
+                    +";"+ this.wysokoscCzynszu +";"+ this.balkon +";"+ this.ogrod +";"+ this.miejscaParkingoweNaziemne +";"+ this.miejscaParkingowePodziemne
+                    +";"+ this.piwnica +";"+ this.winda +";"+ this.osiedleStrzezone +";" + this.rynekWtorny +";"+ this.opis +";"+ this.komentarz );
 
             out.close();
 

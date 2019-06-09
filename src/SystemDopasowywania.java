@@ -17,78 +17,78 @@ public class SystemDopasowywania implements ISystemDopasowywania{
         {
             String holder[];
 
-            holder = klient.getCena().split("-");
+            holder = klient.cena.split("-");
 
             if(holder.length == 1) {
-                if (klient.getCena().equals(nier.getCena()))
+                if (klient.cena.equals(nier.cena))
                     pasujace++;
             } else {
-                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.getCena())) && (Integer.parseInt(nier.getCena()) <= Integer.parseInt(holder[1])))
+                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.cena)) && (Integer.parseInt(nier.cena) <= Integer.parseInt(holder[1])))
                     pasujace++;
             }
-            holder = klient.getCzynsz().split("-");
+            holder = klient.czynsz.split("-");
             if(holder.length == 1) {
-                if(klient.getCzynsz().equals(nier.getCzynsz()))
+                if(klient.czynsz.equals(nier.czynsz))
                     pasujace++;
             } else {
-                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.getCzynsz())) && (Integer.parseInt(nier.getCzynsz()) <= Integer.parseInt(holder[1])))
+                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.czynsz)) && (Integer.parseInt(nier.czynsz) <= Integer.parseInt(holder[1])))
                     pasujace++;
             }
-            holder = klient.getPowCalkowita().split("-");
+            holder = klient.powCalkowita.split("-");
             if(holder.length == 1) {
-                if(klient.getPowCalkowita().equals(nier.getPowCalkowita()))
+                if(klient.powCalkowita.equals(nier.powCalkowita))
                     pasujace++;
             } else {
-                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.getPowCalkowita())) && (Integer.parseInt(nier.getPowCalkowita()) <= Integer.parseInt(holder[1])))
+                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.powCalkowita)) && (Integer.parseInt(nier.powCalkowita) <= Integer.parseInt(holder[1])))
                     pasujace++;
             }
-            if(klient.getDzielnica().equals(nier.getDzielnica()))
+            if(klient.dzielnica.equals(nier.dzielnica))
                 pasujace++;
-            if(klient.getOsiedle().equals(nier.getOsiedle()))
+            if(klient.osiedle.equals(nier.osiedle))
                 pasujace++;
-            if(klient.getTyp().equals(nier.getTyp()))
+            if(klient.typ.equals(nier.typ))
                 pasujace++;
-            if(klient.getPietroNaIle().equals(nier.getPietroNaIle()))
+            if(klient.pietroNaIle.equals(nier.pietroNaIle))
                 pasujace++;
-            holder = klient.getIloscPokoi().split("-");
+            holder = klient.iloscPokoi.split("-");
             if(holder.length == 1) {
-                if(klient.getIloscPokoi().equals(nier.getIloscPokoi()))
+                if(klient.iloscPokoi.equals(nier.iloscPokoi))
                     pasujace++;
             } else {
-                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.getIloscPokoi())) && (Integer.parseInt(nier.getIloscPokoi()) <= Integer.parseInt(holder[1])))
+                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.iloscPokoi)) && (Integer.parseInt(nier.iloscPokoi) <= Integer.parseInt(holder[1])))
                     pasujace++;
             }
-            holder = klient.getIloscLazienek().split("-");
+            holder = klient.iloscLazienek.split("-");
             if(holder.length == 1) {
-                if(klient.getIloscLazienek().equals(nier.getIloscLazienek()))
+                if(klient.iloscLazienek.equals(nier.iloscLazienek))
                     pasujace++;
             } else {
-                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.getIloscLazienek())) && (Integer.parseInt(nier.getIloscLazienek()) <= Integer.parseInt(holder[1])))
+                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.iloscLazienek)) && (Integer.parseInt(nier.iloscLazienek) <= Integer.parseInt(holder[1])))
                     pasujace++;
             }
-            holder = klient.getWysokoscCzynszu().split("-");
+            holder = klient.wysokoscCzynszu.split("-");
             if(holder.length == 1) {
-                if(klient.getWysokoscCzynszu().equals(nier.getWysokoscCzynszu()))
+                if(klient.wysokoscCzynszu.equals(nier.wysokoscCzynszu))
                     pasujace++;
             } else {
-                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.getWysokoscCzynszu())) && (Integer.parseInt(nier.getWysokoscCzynszu()) <= Integer.parseInt(holder[1])))
+                if ((Integer.parseInt(holder[0]) <= Integer.parseInt(nier.wysokoscCzynszu)) && (Integer.parseInt(nier.wysokoscCzynszu) <= Integer.parseInt(holder[1])))
                     pasujace++;
             }
-            if(klient.getBalkon().equals(nier.getBalkon()))
+            if(klient.balkon.equals(nier.balkon))
                 pasujace++;
-            if(klient.getOgrod().equals(nier.getOgrod()))
+            if(klient.ogrod.equals(nier.ogrod))
                 pasujace++;
-            if(klient.getMiejscaParkingoweNaziemne().equals(nier.getMiejscaParkingoweNaziemne()))
+            if(klient.miejscaParkingoweNaziemne.equals(nier.miejscaParkingoweNaziemne))
                 pasujace++;
-            if(klient.getMiejscaParkingowePodziemne().equals(nier.getMiejscaParkingowePodziemne()))
+            if(klient.miejscaParkingowePodziemne.equals(nier.miejscaParkingowePodziemne))
                 pasujace++;
-            if(klient.getPiwnica().equals(nier.getPiwnica()))
+            if(klient.piwnica.equals(nier.piwnica))
                 pasujace++;
-            if(klient.getWinda().equals(nier.getWinda()))
+            if(klient.winda.equals(nier.winda))
                 pasujace++;
-            if(klient.getOsiedleStrzezone().equals(nier.getOsiedleStrzezone()))
+            if(klient.osiedleStrzezone.equals(nier.osiedleStrzezone))
                 pasujace++;
-            if(klient.getRynekWtorny().equals(nier.getRynekWtorny()))
+            if(klient.rynekWtorny.equals(nier.rynekWtorny))
                 pasujace++;
         }
         return pasujace;
