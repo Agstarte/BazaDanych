@@ -82,42 +82,42 @@ public class Nieruchomosc extends Rekord{
             case 2:
                 System.out.println("Podaj nowe imie: ");
                 String imie = input.nextLine();
-                wlasciciel.setImie(imie);
+                this.wlasciciel.imie=imie;
                 break;
             case 3:
                 System.out.println("Podaj nowe nazwisko: ");
                 String nazwisko = input.nextLine();
-                wlasciciel.setNazwisko(nazwisko);
+                this.wlasciciel.nazwisko=nazwisko;
                 break;
             case 4:
                 System.out.println("Podaj nowy e-mail: ");
                 String mail = input.nextLine();
-                wlasciciel.setMail(mail);
+                this.wlasciciel.mail=mail;
                 break;
             case 5:
                 System.out.println("Podaj nowy nr. telefonu: ");
                 String tel = input.nextLine();
-                wlasciciel.setNrKontaktowy(tel);
+                wlasciciel.nrKontaktowy=tel;
                 break;
             case 6:
                 System.out.println("Podaj nowa ulice: ");
                 String ulica = input.nextLine();
-                adres.setUlica(ulica);
+                this.adres.ulica=ulica;
                 break;
             case 7:
                 System.out.println("Podaj nowy kod pocztowy: ");
                 String kod = input.nextLine();
-                adres.setKodPocztowy(kod);
+                this.adres.kodPocztowy=kod;
                 break;
             case 8:
                 System.out.println("Podaj nowy numer domu: ");
                 String nrd = input.nextLine();
-                adres.setNrDomu(nrd);
+                this.adres.nrDomu=nrd;
                 break;
             case 9:
                 System.out.println("Podaj nowy numer mieszkania: ");
                 String nrm = input.nextLine();
-                adres.setNrMieszkania(nrm);
+                this.adres.nrMieszkania=nrm;
                 break;
             case 10:
                 System.out.println("Podaj nowa date dodania: ");
@@ -241,12 +241,12 @@ public class Nieruchomosc extends Rekord{
         {
             FileWriter plik = new FileWriter("baza.txt", true);
             PrintWriter out = new PrintWriter(plik);
-            out.println("Nieruchomosc;" + ID +";"+ wlasciciel.getImie() +";"+ wlasciciel.getNazwisko()
-                    +";"+ wlasciciel.getMail() +";"+ wlasciciel.getNrKontaktowy() +";"+ adres.getUlica() +";"+ adres.getKodPocztowy()
-                    +";"+ adres.getNrDomu() +";"+ adres.getNrMieszkania() +";"+ dataDodania +";"+ this.cena +";"+ this.czynsz +";"+
-                    this.powCalkowita +";"+ this.dzielnica +";"+ this.osiedle +";"+ this.typ +";"+ this.pietroNaIle +";"+ this.iloscPokoi +";"+ this.iloscLazienek
-                    +";"+ this.wysokoscCzynszu +";"+ this.balkon +";"+ this.ogrod +";"+ this.miejscaParkingoweNaziemne +";"+ this.miejscaParkingowePodziemne
-                    +";"+ this.piwnica +";"+ this.winda +";"+ this.osiedleStrzezone +";" + this.rynekWtorny +";"+ this.opis +";"+ this.komentarz );
+            out.println("Nieruchomosc;" + ID +";"+ wlasciciel.imie +";"+ wlasciciel.nazwisko
+                    +";"+ wlasciciel.mail +";"+ wlasciciel.nrKontaktowy +";"+ adres.ulica +";"+ adres.kodPocztowy
+                    +";"+ adres.nrDomu +";"+ adres.nrMieszkania +";"+ dataDodania +";"+ cena +";"+ czynsz +";"+
+                    powCalkowita +";"+ dzielnica +";"+ osiedle +";"+ typ +";"+ pietroNaIle +";"+ iloscPokoi +";"+ iloscLazienek
+                    +";"+ wysokoscCzynszu +";"+ balkon +";"+ ogrod +";"+ miejscaParkingoweNaziemne +";"+ miejscaParkingowePodziemne
+                    +";"+ piwnica +";"+ winda +";"+ osiedleStrzezone +";" + rynekWtorny +";"+ opis +";"+ komentarz );
 
             out.close();
 
@@ -257,33 +257,5 @@ public class Nieruchomosc extends Rekord{
         }
     }
 
-
-    public Kontakt getWlasciciel() {
-        return wlasciciel;
-    }
-
-    public void setWlasciciel(Kontakt wlasciciel) {
-        this.wlasciciel = wlasciciel;
-    }
-
-    public Adres getAdres() {
-        return adres;
-    }
-
-    public void setAdres(Adres adres) {
-        this.adres = adres;
-    }
-
-    public String getDataDodania() {
-        return dataDodania;
-    }
-
-    public void setDataDodania(String dataDodania) {
-        this.dataDodania = dataDodania;
-    }
-
-    public String getCenaZaMetr2() {
-        return cenaZaMetr2;
-    }
 
 }

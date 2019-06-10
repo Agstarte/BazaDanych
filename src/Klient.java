@@ -67,22 +67,22 @@ public class Klient extends Rekord {
                 case 2:
                     System.out.println("Podaj nowe imie: ");
                     String imie = input.nextLine();
-                    osoba.setImie(imie);
+                    this.osoba.imie=imie;
                     break;
                 case 3:
                     System.out.println("Podaj nowe nazwisko: ");
                     String nazwisko = input.nextLine();
-                    osoba.setNazwisko(nazwisko);
+                    this.osoba.nazwisko=nazwisko;
                     break;
                 case 4:
                     System.out.println("Podaj nowy e-mail: ");
                     String mail = input.nextLine();
-                    osoba.setMail(mail);
+                    this.osoba.mail=mail;
                     break;
                 case 5:
                     System.out.println("Podaj nowy nr. telefonu: ");
                     String tel = input.nextLine();
-                    osoba.setNrKontaktowy(tel);
+                    this.osoba.nrKontaktowy=tel;
                     break;
                 case 6:
                     System.out.println("Podaj nowa cene: ");
@@ -201,8 +201,8 @@ public class Klient extends Rekord {
             FileWriter plik = new FileWriter("baza.txt", true);
             PrintWriter out = new PrintWriter(plik);
 
-            out.println("Klient;" + ID +";"+ osoba.getImie() +";"+  osoba.getNazwisko() +";"+  osoba.getMail()+";"+
-                    osoba.getNrKontaktowy() +";"+ this.cena +";"+ this.czynsz +";"+ this.powCalkowita +";"+ this.dzielnica +";"+ this.osiedle +";"+
+            out.println("Klient;" + ID +";"+ osoba.imie +";"+  osoba.nazwisko +";"+  osoba.mail+";"+
+                    osoba.nrKontaktowy +";"+ this.cena +";"+ this.czynsz +";"+ this.powCalkowita +";"+ this.dzielnica +";"+ this.osiedle +";"+
                     this.typ +";"+ this.pietroNaIle +";"+ this.iloscPokoi +";"+ this.iloscLazienek +";"+ this.wysokoscCzynszu +";"+ this.balkon +";"+
                     this.ogrod +";"+ this.miejscaParkingoweNaziemne +";"+ this.miejscaParkingowePodziemne +";"+ this.piwnica +";"+ this.winda +";"
                     + this.osiedleStrzezone +";" + this.rynekWtorny +";"+ this.opis +";"+ this.komentarz );
@@ -212,15 +212,6 @@ public class Klient extends Rekord {
         {
             System.out.println("Blad podczas zapisu klienta");
         }
-    }
-    // GETERY SETERY
-
-    public Kontakt getOsoba() {
-        return osoba;
-    }
-
-    public void setOsoba(Kontakt osoba) {
-        this.osoba = osoba;
     }
 
 
