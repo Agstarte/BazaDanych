@@ -4,23 +4,12 @@ import static org.junit.Assert.*;
 
 public class AdresTest {
     Adres adres = new Adres("Obornicka", "11-123", "5", "10");
-    @Test
-    public void getUlica() {
-        assertEquals("Obornicka", adres.getUlica());
-    }
 
     @Test
-    public void getKodPocztowy() {
-        assertEquals("11-123", adres.getKodPocztowy());
-    }
-
-    @Test
-    public void getNrDomu() {
-        assertEquals("5", adres.getNrDomu());
-    }
-
-    @Test
-    public void getNrMieszkania() {
-        assertEquals("10", adres.getNrMieszkania());
+    public void constructorTest() {
+        assertEquals("Obornicka", adres.ulica);
+        assertEquals("11-123", adres.kodPocztowy);
+        assertEquals("5", adres.nrDomu);
+        assertEquals("10", adres.nrMieszkania);
     }
 }
